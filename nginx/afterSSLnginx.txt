@@ -8,7 +8,7 @@ http {
 
     server {
         listen 80 ;
-        server_name api-test.projectlive.me;
+        server_name test-api.projectlive.me;
 
         location /.well-known/acme-challenge/ {
             root /var/www/certbot;
@@ -25,11 +25,11 @@ http {
 
     server {
         listen 443 ssl;
-        server_name api-test.projectlive.me;
+        server_name test-api.projectlive.me;
         server_tokens off;
 
-        ssl_certificate /etc/letsencrypt/live/api-test.projectlive.me/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/api-test.projectlive.me/privkey.pem;
+        ssl_certificate /etc/letsencrypt/live/test-api.projectlive.me/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/test-api.projectlive.me/privkey.pem;
         # include /etc/letsencrypt/options-ssl-nginx.conf;
         # ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
