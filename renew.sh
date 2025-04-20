@@ -1,3 +1,4 @@
-/usr/bin/docker run --rm --name viv -v "/home/ubuntu/DockerDeploy/certbot/conf:/etc/letsencrypt" certbot/certbot renew
+/usr/bin/docker run --rm --name RenewCert -v "/home/ubuntu/DockerDeploy/certbot/conf:/etc/letsencrypt" certbot/certbot renew
 
-# * * * * * /home/ubuntu/DockerDeploy/renew.sh >> /home/ubuntu/DockerDeploy/cron.log 2>&1
+cd /home/ubuntu/DockerDeploy && /usr/bin/docker compose exec -T nginx nginx -s reload
+# 0 8 1 * * /home/ubuntu/DockerDeploy/renew.sh >> /home/ubuntu/DockerDeploy/cron.log 2>&1
