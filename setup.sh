@@ -27,3 +27,9 @@ cd DockerDeploy
 chmod +x init.sh
 chmod +x restart.sh
 chmod +x renew.sh
+
+sudo groupadd docker
+
+sudo gpasswd -a $USER docker
+
+echo "server restart is required"
