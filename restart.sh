@@ -10,7 +10,7 @@ echo "events {
 
 http {
     server_tokens off;
-    charset utf-8;c
+    charset utf-8;
 
     server {
         listen 80 ;
