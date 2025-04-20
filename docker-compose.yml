@@ -21,7 +21,7 @@ services:
       - ./certbot/www:/var/www/certbot
     networks:
       - test_intranet
-    command: certonly --test-cert --webroot -w /var/www/certbot -d api-test.projectlive.me --noninteractive --email vivekcharak004@gmail.com --agree-tos
+    command: certonly --test-cert --webroot -w /var/www/certbot -d test-api.projectlive.me --noninteractive --email vivekcharak004@gmail.com --agree-tos
 
   backend:
     build: .
