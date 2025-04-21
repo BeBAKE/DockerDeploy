@@ -1,28 +1,32 @@
-sudo docker compose down -v
-sudo docker rm $(sudo docker stop $(sudo docker ps -aq ))
-sudo docker rmi $(sudo docker images -q)
+# #!/bin/bash
 
-sudo rm -rf cerbot
+# # if you want to restart the docker containers from fresh, this script is just for that
 
-echo "events {
-    worker_connections 1024;
-}
+# sudo docker compose down -v
+# sudo docker rm $(sudo docker stop $(sudo docker ps -aq ))
+# sudo docker rmi $(sudo docker images -q)
 
-http {
-    server_tokens off;
-    charset utf-8;
+# sudo rm -rf cerbot
 
-    server {
-        listen 80 ;
-        server_name test-api.projectlive.me;
+# echo "events {
+#     worker_connections 1024;
+# }
 
-        location / {
-            proxy_pass http://backend:5500/;
-        }
+# http {
+#     server_tokens off;
+#     charset utf-8;
 
-        location /.well-known/acme-challenge/ {
-            root /var/www/certbot;
-        }
-    }
+#     server {
+#         listen 80 ;
+#         server_name test-api.projectlive.me;
 
-}" > nginx/nginx.conf
+#         location / {
+#             proxy_pass http://backend:5500/;
+#         }
+
+#         location /.well-known/acme-challenge/ {
+#             root /var/www/certbot;
+#         }
+#     }
+
+# }" > nginx/nginx.conf
